@@ -27,6 +27,7 @@ import java.util.Locale
 import android.Manifest
 import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
+import es.jcc.project.MainApp.HomeFragment
 
 
 class AppActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener{
@@ -87,6 +88,11 @@ class AppActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListene
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean = when(item.itemId){
         R.id.inicio -> {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                replace<HomeFragment>(R.id.fCView)
+                addToBackStack(null)
+            }
             true
         }
         R.id.clasificaciones -> {
