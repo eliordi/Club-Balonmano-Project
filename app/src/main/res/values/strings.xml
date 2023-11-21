@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Project</string>
+    <string name="app_name">CB MARISTES ALGEMESI</string>
 
     <!-- ACTIVITY LOGIN -->
     <string name="login">LOGIN</string>
@@ -29,8 +29,6 @@
     <string name="nombre">NAME</string>
     <string name="registration">TYPE</string>
     <string name="edad">AGE</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

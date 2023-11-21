@@ -83,9 +83,6 @@ class AppActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListene
             }
             true
         }
-        R.id.galeria -> {
-            true
-        }
         else -> false
     }
 
