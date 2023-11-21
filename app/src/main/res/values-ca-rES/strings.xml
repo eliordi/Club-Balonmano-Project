@@ -19,6 +19,7 @@
 
     <!-- TOOLBAR -->
     <string name="logout">Tancar sessió</string>
+    <string name="permissions">Permissions</string>
 
     <!-- BOTTOM NAVIGATION -->
     <string name="inicio">Inici</string>

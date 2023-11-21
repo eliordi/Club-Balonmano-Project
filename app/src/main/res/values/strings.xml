@@ -18,6 +18,7 @@
 
     <!-- TOOLBAR -->
     <string name="logout">Logout</string>
+    <string name="permissions">Permissions</string>
 
     <!-- BOTTOM NAVIGATION -->
     <string name="inicio">Home</string>
