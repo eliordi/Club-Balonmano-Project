@@ -7,59 +7,42 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ImageButton
 import es.jcc.project.Login.WelcomeFragment
 import es.jcc.project.R
+import es.jcc.project.databinding.ActivityAppBinding
+import es.jcc.project.databinding.FragmentPlayersBinding
 import java.lang.Exception
 
 
-class PlayersFragment : Fragment(), View.OnClickListener {
+class PlayersFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
-    private var mListener: PlayersFragmentListener? = null
+    private lateinit var binding: FragmentPlayersBinding
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
+    var seleccion: String = ""
+    //var jugadors: MutableList<Jugador> = mutableListOf()
 
-        if (context is PlayersFragmentListener){
-            mListener = context
-        }else{
-            throw Exception("The activity must implement the interface PlayersFragmentListener")
-        }
-    }
-
-    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_players, container, false)
+        //val view = inflater.inflate(R.layout.fragment_players, container, false)
 
-        val primera: ImageButton = view.findViewById(R.id.primeraButton)
-        val segona: ImageButton = view.findViewById(R.id.segonaButton)
+        binding = FragmentPlayersBinding.inflate(inflater, container, false)
 
-        primera.setOnClickListener(this)
-        segona.setOnClickListener(this)
 
-        return view
+        return binding.root
     }
 
-    override fun onClick(v: View) {
-        when(v.id){
-            R.id.primeraButton -> mListener?.onPrimeraButtonClicked()
-            R.id.segonaButton -> mListener?.onSegonaButtonClicked()
-        }
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        TODO("Not yet implemented")
     }
 
-    override fun onDetach() {
-        super.onDetach()
-        mListener = null
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+        TODO("Not yet implemented")
     }
 
-    interface PlayersFragmentListener{
-
-        fun onPrimeraButtonClicked()
-        fun onSegonaButtonClicked()
-    }
 
 }
