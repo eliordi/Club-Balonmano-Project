@@ -26,4 +26,9 @@
     <string name="jugadores">Jugadors</string>
     <string name="galeria">Imatges</string>
 
+    <!-- RECYCLER VIEW -->
+    <string name="nombre">NOM</string>
+    <string name="registration">TIPUS</string>
+    <string name="edad">EDAT</string>
+
 </resources>

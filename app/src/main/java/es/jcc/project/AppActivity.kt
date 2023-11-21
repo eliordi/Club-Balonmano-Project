@@ -22,7 +22,7 @@ import es.jcc.project.databinding.ActivityAppBinding
 import java.util.Locale
 
 
-class AppActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener, PlayersFragment.PlayersFragmentListener {
+class AppActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener{
 
     private lateinit var binding: ActivityAppBinding
 
@@ -82,12 +82,5 @@ class AppActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListene
         else -> false
     }
 
-    override fun onPrimeraButtonClicked() {
-        Toast.makeText(this, "Perfect", Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onSegonaButtonClicked() {
-
-    }
 
 }
