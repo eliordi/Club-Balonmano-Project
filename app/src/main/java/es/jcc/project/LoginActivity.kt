@@ -67,7 +67,7 @@ class LoginActivity : AppCompatActivity(), WelcomeFragment.WelcomeFragmentListen
     }
 
     override fun onDialogPositiveClick2() {
-        //nasin
+        Snackbar.make(findViewById(R.id.layout), "PUEDES ACCEDER CON EL USUARIO: admin Y LA CONTRASEÑA: 1234", Snackbar.LENGTH_LONG).show()
     }
 
 

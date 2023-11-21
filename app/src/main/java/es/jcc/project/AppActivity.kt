@@ -16,8 +16,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.google.android.material.navigation.NavigationBarView
+import com.google.android.material.snackbar.Snackbar
 import es.jcc.project.Login.LoginFragment
 import es.jcc.project.MainApp.PlayersFragment
+import es.jcc.project.MainApp.TeamsFragment
 import es.jcc.project.databinding.ActivityAppBinding
 import java.util.Locale
 
@@ -66,6 +68,11 @@ class AppActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListene
             true
         }
         R.id.clasificaciones -> {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                replace<TeamsFragment>(R.id.fCView)
+                addToBackStack(null)
+            }
             true
         }
         R.id.jugadores -> {
