@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Project</string>
+
+    <!-- ACTIVITY LOGIN -->
+    <string name="login">INICIAR SESSIÓ</string>
+    <string name="signintocontinue">Inicia la sessió per continuar</string>
+    <string name="back">ENRERE</string>
+    <string name="signup">REGISTRAR-SE</string>
+    <string name="user">Usuari</string>
+    <string name="password">Contrasenya</string>
+    <string name="createaccount">Crea un Nou Compte</string>
+    <string name="name">Nom</string>
+
+    <!-- DIALOGS -->
+    <string name="error">Error!!</string>
+    <string name="youmust">Heu d\'omplir tots els camps</string>
+    <string name="incorrectUser">Usuari o contrasenya incorrectes</string>
+
+    <!-- TOOLBAR -->
+    <string name="logout">Tancar sessió</string>
+
+    <!-- BOTTOM NAVIGATION -->
+    <string name="inicio">Inici</string>
+    <string name="clasificaciones">Classifications</string>
+    <string name="jugadores">Jugadors</string>
+    <string name="galeria">Imatges</string>
+
+</resources>

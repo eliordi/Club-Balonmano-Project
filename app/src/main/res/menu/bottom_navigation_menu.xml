@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/inicio"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="@string/inicio"/>
+    <item
+        android:id="@+id/clasificaciones"
+        android:enabled="true"
+        android:icon="@drawable/ic_classification"
+        android:title="@string/clasificaciones" />
+    <item
+        android:id="@+id/jugadores"
+        android:enabled="true"
+        android:icon="@drawable/ic_players"
+        android:title="@string/jugadores" />
+    <item
+        android:id="@+id/galeria"
+        android:enabled="true"
+        android:icon="@drawable/ic_gallery"
+        android:title="@string/galeria" />
+</menu>

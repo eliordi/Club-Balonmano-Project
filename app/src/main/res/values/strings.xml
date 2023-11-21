@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Project</string>
+
+    <!-- ACTIVITY LOGIN -->
+    <string name="login">LOGIN</string>
+    <string name="signintocontinue">Sign in to continue</string>
+    <string name="back">BACK</string>
+    <string name="signup">SIGNUP</string>
+    <string name="user">User</string>
+    <string name="password">Password</string>
+    <string name="createaccount">Create New Account</string>
+    <string name="name">Name</string>
+
+    <!-- DIALOGS -->
+    <string name="error">Error!!</string>
+    <string name="youmust">You must fill all the fields</string>
+    <string name="incorrectUser">Incorrect user or password</string>
+
+    <!-- TOOLBAR -->
+    <string name="logout">Logout</string>
+
+    <!-- BOTTOM NAVIGATION -->
+    <string name="inicio">Home</string>
+    <string name="clasificaciones">Classifications</string>
+    <string name="jugadores">Players</string>
+    <string name="galeria">Gallery</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
