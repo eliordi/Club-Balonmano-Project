@@ -36,7 +36,7 @@ class HomeFragment : Fragment(){
         val noticias = mutableListOf<Noticia>(
             Noticia(R.drawable.noticia1, "Derrotas para el #PrimeraNacional y #2aN masc. Los de Vicent Nogues en Granollers y\n" +
                     "los de Adria Machi en casa contra el Marni no fueron capaces de mantener en la 2a parte el nivel de la 1a.\n" +
-                    "No podemos dar tantas facilidades a nuestros rivales.  ¡¡¡A seguir trabajando!!! \uD83D\uDCAA\uD83D\uDCAA\uD83D\uDCAA"),
+                    "No podemos dar tantas facilidades a nuestros rivales.  ¡¡¡A seguir trabajando!!!"),
             Noticia(R.drawable.noticia2, "\uD83D\uDCE2¡¡¡Nuestro torneo de Semana Santa ya está en proceso!!! \uD83D\uDC9B\uD83E\uDD45\n" +
                     "\uD83D\uDC4CYa hay equipos interesados. Los principales objetivos siguen siendo fomentar la convivencia, disfrutar de la práctica del balonmano y la competición.\n" +
                     "\uD83D\uDCC5 ✏️¡¡Apuntad las fechas!! Marzo 2024\n" +
