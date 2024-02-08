@@ -6,15 +6,19 @@
     <string name="signintocontinue">Sign in to continue</string>
     <string name="back">BACK</string>
     <string name="signup">SIGNUP</string>
-    <string name="user">User</string>
+    <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="createaccount">Create New Account</string>
     <string name="name">Name</string>
+    <string name="forgotPass">Forgot your password?</string>
+    <string name="sendEmail">Send Email</string>
+    <string name="resetPass">Reset your password</string>
+
 
     <!-- DIALOGS -->
     <string name="error">Error!!</string>
     <string name="youmust">You must fill all the fields</string>
-    <string name="incorrectUser">Incorrect user or password</string>
+    <string name="incorrectEmail">Incorrect email or password</string>
 
     <!-- TOOLBAR -->
     <string name="logout">Logout</string>
@@ -30,6 +34,8 @@
     <string name="nombre">NAME</string>
     <string name="registration">TYPE</string>
     <string name="edad">AGE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

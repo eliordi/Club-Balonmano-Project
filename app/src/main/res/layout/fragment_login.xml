@@ -73,7 +73,7 @@
         android:layout_marginStart="92dp"
         android:layout_marginBottom="300dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="@string/user"
+        android:text="@string/email"
         android:textColor="#FFE2E623"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -99,7 +99,7 @@
         android:layout_marginStart="92dp"
         android:ems="10"
         android:fontFamily="@font/poppins_medium"
-        android:hint="Jordi"
+        android:hint="example@gmail.com"
         android:inputType="textPersonName"
         android:textColor="#000000"
         android:textColorHighlight="#B1B313"
@@ -119,5 +119,21 @@
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="87dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="15dp"
+        android:background="#00FFFFFF"
+        android:text="@string/forgotPass"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="#3C5CF6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,15 +7,18 @@
     <string name="signintocontinue">Inicia la sessió per continuar</string>
     <string name="back">ENRERE</string>
     <string name="signup">REGISTRAR-SE</string>
-    <string name="user">Usuari</string>
+    <string name="email">Email</string>
     <string name="password">Contrasenya</string>
     <string name="createaccount">Crea un Nou Compte</string>
     <string name="name">Nom</string>
+    <string name="forgotPass">Has olbidat la contrasenya?</string>
+    <string name="sendEmail">Enviar email</string>
+    <string name="resetPass">Restableix la teva constrasenya</string>
 
     <!-- DIALOGS -->
     <string name="error">Error!!</string>
     <string name="youmust">Heu d\'omplir tots els camps</string>
-    <string name="incorrectUser">Usuari o contrasenya incorrectes</string>
+    <string name="incorrectEmail">Usuari o contrasenya incorrectes</string>
 
     <!-- TOOLBAR -->
     <string name="logout">Tancar sessió</string>

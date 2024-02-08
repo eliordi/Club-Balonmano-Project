@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "748233597",
+    "project_id": "proyecto-balonmanoapp",
+    "storage_bucket": "proyecto-balonmanoapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748233597:android:c5396a64a72a41495ca214",
+        "android_client_info": {
+          "package_name": "es.jcc.project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmloBYrolJbDoYNkwiqf5eEN3lAnNJrnQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

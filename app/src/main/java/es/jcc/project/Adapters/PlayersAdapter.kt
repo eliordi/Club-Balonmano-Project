@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import es.jcc.project.Classes.Jugador
 import es.jcc.project.R
 
-class PlayersAdapter(private val context: Context, private val players: MutableList<Jugador>) : RecyclerView.Adapter<PlayersAdapter.PlayersViewHolder>(){
+class PlayersAdapter(private val context: Context,
+                     private val players: MutableList<Jugador>)
+    : RecyclerView.Adapter<PlayersAdapter.PlayersViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlayersViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.rec_player, parent, false)

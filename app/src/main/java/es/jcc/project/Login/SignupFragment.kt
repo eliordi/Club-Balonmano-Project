@@ -10,17 +10,27 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
+import es.jcc.project.AuthManager
 import es.jcc.project.Dialogs.MyDialog
 import es.jcc.project.R
+import es.jcc.project.databinding.FragmentSignupBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.lang.Exception
 
-class SignupFragment : Fragment(), View.OnClickListener {
+class SignupFragment : Fragment(){
 
-    private var mListener: SignupFragmentListener? = null
+    private lateinit var mListener: SignupFragmentListener
+    private lateinit var binding: FragmentSignupBinding
+    private lateinit var authManager: AuthManager
+    
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
+        authManager = AuthManager()
         if (context is SignupFragmentListener){
             mListener = context
         }else{
@@ -33,46 +43,36 @@ class SignupFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_signup, container, false)
-
-        val back2: Button = view.findViewById(R.id.backButton2)
-        val signup2: Button = view.findViewById(R.id.signupButton2)
-
-        val nameET: EditText = view.findViewById(R.id.nameEditText)
-        val userET: EditText = view.findViewById(R.id.userEditText2)
-        val passET: EditText = view.findViewById(R.id.passEditText2)
-
-        back2.setOnClickListener(this)
-        signup2.setOnClickListener{
-            val name = nameET.text.toString()
-            val user = userET.text.toString()
-            val pass = passET.text.toString()
-
-            if (name.isEmpty() || user.isEmpty() || pass.isEmpty()){
-                MyDialog().show(this.childFragmentManager, "REGISTER")
-            }else{
-                mListener?.onSignupButton2Clicked()
-
+        
+        binding = FragmentSignupBinding.inflate(inflater, container, false)
+        
+        binding.signupButton2.setOnClickListener { 
+            val email = binding.emailEditText2.text.toString()
+            val pass = binding.passEditText2.text.toString()
+            if (!email.isNullOrBlank() && !pass.isNullOrBlank()){
+                lifecycleScope.launch(Dispatchers.IO){
+                    val userLogged = authManager.signUp(email, pass)
+                    withContext(Dispatchers.Main){
+                        if (userLogged != null){
+                            Toast.makeText(requireContext(), userLogged.email, Toast.LENGTH_SHORT).show()
+                            mListener.onSignupButton2Clicked()
+                        }else{
+                            MyDialog().show(requireActivity().supportFragmentManager, "REGISTER")
+                        }
+                    }
+                }
             }
         }
 
-        return view
-    }
-
-    override fun onClick(v: View) {
-        when(v.id){
-            R.id.backButton2 -> mListener?.onBackButton2Clicked()
+        binding.backButton2.setOnClickListener {
+            mListener.onBackButton2Clicked()
         }
-    }
+        
 
-    override fun onDetach() {
-        super.onDetach()
-        mListener = null
+        return binding.root
     }
 
     interface SignupFragmentListener{
-
         fun onBackButton2Clicked()
         fun onSignupButton2Clicked()
     }

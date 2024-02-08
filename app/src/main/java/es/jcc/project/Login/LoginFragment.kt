@@ -10,22 +10,31 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
+import es.jcc.project.AuthManager
 import es.jcc.project.Dialogs.MyDialog
 import es.jcc.project.Dialogs.MyDialog2
 import es.jcc.project.R
+import es.jcc.project.databinding.FragmentLoginBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.lang.Exception
 
-class LoginFragment : Fragment(), View.OnClickListener {
+class LoginFragment : Fragment(){
 
-    private var mListener: LoginFragmentListener? = null
+    private lateinit var binding: FragmentLoginBinding
+    private lateinit var mListener: LoginFragmentListener
+    private lateinit var authManager: AuthManager
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
+        authManager = AuthManager()
         if (context is LoginFragmentListener){
             mListener = context
         }else{
-            throw Exception("The activity must implement the interface MenuFragmentListener")
+            throw Exception("The activity must implement the interface LoginFragmentListener")
         }
     }
 
@@ -34,47 +43,42 @@ class LoginFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_login, container, false)
 
-        val back: Button = view.findViewById(R.id.backButton)
-        val login2: Button = view.findViewById(R.id.loginButton2)
-
-        val userET: EditText = view.findViewById(R.id.userEditText)
-        val passET: EditText = view.findViewById(R.id.passEditText)
-
-
-
-        back.setOnClickListener(this)
-        login2.setOnClickListener{
-            val user = userET.text.toString()
-            val pass = passET.text.toString()
-
-            if (user == "admin" && pass == "1234"){
-                //Toast.makeText(context, "Perfect", Toast.LENGTH_SHORT).show()
-                mListener?.onLoginButton2Clicked()
-            }else{
-                MyDialog2().show(this.childFragmentManager, "LOGIN")
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding.loginButton2.setOnClickListener{
+            val email = binding.userEditText.text.toString()
+            val pass = binding.passEditText.text.toString()
+            if (!email.isNullOrBlank() && !pass.isNullOrBlank()){
+                lifecycleScope.launch(Dispatchers.IO) {
+                    val userLogged = authManager.login(email, pass)
+                    withContext(Dispatchers.Main){
+                        if (userLogged != null){
+                            Toast.makeText(requireContext(), userLogged.email, Toast.LENGTH_SHORT).show()
+                            mListener.onLoginButton2Clicked()
+                        }else{
+                            MyDialog2().show(requireActivity().supportFragmentManager, "LOGIN")
+                            //Toast.makeText(requireContext(), "Bad credentials", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
             }
         }
 
-        return view
-    }
-
-    override fun onClick(v: View) {
-        when(v.id){
-            R.id.backButton -> mListener?.onBackButtonClicked()
+        binding.backButton.setOnClickListener{
+            mListener.onBackButtonClicked()
         }
-    }
 
-    override fun onDetach() {
-        super.onDetach()
-        mListener = null
+        binding.resetButton?.setOnClickListener {
+            mListener.onResetButtonClicked()
+        }
+
+        return binding.root
     }
 
     interface LoginFragmentListener{
         fun onBackButtonClicked()
         fun onLoginButton2Clicked()
+        fun onResetButtonClicked()
     }
 
 }
