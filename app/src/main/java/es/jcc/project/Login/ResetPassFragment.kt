@@ -8,8 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
-import es.jcc.project.AuthManager
-import es.jcc.project.R
+import es.jcc.project.Managers.AuthManager
 import es.jcc.project.databinding.FragmentResetPassBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

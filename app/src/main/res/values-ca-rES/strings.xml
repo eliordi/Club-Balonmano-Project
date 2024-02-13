@@ -22,17 +22,22 @@
 
     <!-- TOOLBAR -->
     <string name="logout">Tancar sessió</string>
-    <string name="permissions">Permissions</string>
+    <string name="permissions">Permisos</string>
+    <string name="settings">Configuracions</string>
 
     <!-- BOTTOM NAVIGATION -->
     <string name="inicio">Inici</string>
     <string name="clasificaciones">Classifications</string>
     <string name="jugadores">Jugadors</string>
     <string name="galeria">Imatges</string>
+    <string name="chat">Xat</string>
 
     <!-- RECYCLER VIEW -->
     <string name="nombre">NOM</string>
     <string name="registration">TIPUS</string>
     <string name="edad">EDAT</string>
+
+    <!-- CHAT -->
+    <string name="mensaje">Missatge</string>
 
 </resources>

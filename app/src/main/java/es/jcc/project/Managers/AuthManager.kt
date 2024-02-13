@@ -1,4 +1,4 @@
-package es.jcc.project
+package es.jcc.project.Managers
 
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth

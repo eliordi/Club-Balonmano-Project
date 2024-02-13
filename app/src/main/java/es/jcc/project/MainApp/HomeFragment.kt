@@ -26,8 +26,8 @@ class HomeFragment : Fragment(){
         // inflater.inflate(R.layout.fragment_home, container, false)
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-
         setUpRecyclerView()
+
         return binding.root
     }
 

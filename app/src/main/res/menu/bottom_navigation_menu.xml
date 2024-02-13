@@ -15,4 +15,14 @@
         android:enabled="true"
         android:icon="@drawable/ic_players"
         android:title="@string/jugadores" />
+    <item
+        android:id="@+id/chat"
+        android:enabled="true"
+        android:icon="@drawable/ic_chat"
+        android:title="@string/chat" />
+    <item
+        android:id="@+id/imagenes"
+        android:enabled="true"
+        android:icon="@drawable/ic_images"
+        android:title="@string/galeria" />
 </menu>

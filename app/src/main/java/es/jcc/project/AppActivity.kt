@@ -27,6 +27,7 @@ import java.util.Locale
 import android.Manifest
 import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
+import es.jcc.project.MainApp.ChatFragment
 import es.jcc.project.MainApp.HomeFragment
 
 
@@ -53,8 +54,9 @@ class AppActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListene
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when(item.itemId){
-        R.id.action_logout -> {
-            reiniciarApp()
+
+        R.id.action_settings -> {
+            //Settings fragment
             true
         }
         R.id.action_permissions -> {
@@ -72,6 +74,10 @@ class AppActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListene
                     Toast.LENGTH_LONG
                 ).show()
             }
+            true
+        }
+        R.id.action_logout -> {
+            reiniciarApp()
             true
         }
         else -> false
@@ -109,6 +115,17 @@ class AppActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListene
                 replace<PlayersFragment>(R.id.fCView)
                 addToBackStack(null)
             }
+            true
+        }
+        R.id.chat -> {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                replace<ChatFragment>(R.id.fCView)
+                addToBackStack(null)
+            }
+            true
+        }
+        R.id.imagenes -> {
             true
         }
         else -> false

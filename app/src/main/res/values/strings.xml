@@ -23,19 +23,22 @@
     <!-- TOOLBAR -->
     <string name="logout">Logout</string>
     <string name="permissions">Permissions</string>
+    <string name="settings">Settings</string>
 
     <!-- BOTTOM NAVIGATION -->
     <string name="inicio">Home</string>
     <string name="clasificaciones">Classifications</string>
     <string name="jugadores">Players</string>
-    <string name="galeria">Gallery</string>
+    <string name="galeria">Images</string>
+    <string name="chat">Chat</string>
 
     <!-- RECYCLER VIEW -->
     <string name="nombre">NAME</string>
     <string name="registration">TYPE</string>
     <string name="edad">AGE</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- CHAT -->
+    <string name="mensaje">Message</string>
 
 
 </resources>
