@@ -1,5 +1,6 @@
 package es.jcc.project.MainApp
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -72,6 +73,12 @@ class RetrofitFragment : Fragment() {
     private fun updateDucks(imageUrls: String) {
         ducks.add(imageUrls)
         adapter.notifyDataSetChanged()
+    }
+
+    fun offlineMode(): Boolean{
+        val prefs = requireContext().getSharedPreferences("es.jcc.project_preferences", Context.MODE_PRIVATE)
+        var offlineModeActivated = prefs.getBoolean("offlineMode", false)
+        return offlineModeActivated
     }
 
 }
