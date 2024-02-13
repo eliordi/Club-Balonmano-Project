@@ -96,11 +96,14 @@ class ChatFragment : Fragment(), MensajesAdapter.OnMensajeCLickedListener{
     }
 
     override fun onMensajeLongClicked(mensaje: Mensaje): Boolean {
-        val deleteDialogFunction = { docId: String ->
-            deleteMensaje(docId)
+
+        if (AuthManager().getCurrentUser()?.email.toString().equals(mensaje.email)){
+            val deleteDialogFunction = { docId: String ->
+                deleteMensaje(docId)
+            }
+            DeleteDialog(mensaje, deleteDialogFunction, this.requireContext())
+                .show(childFragmentManager, "ELIMINAR MENSAJE")
         }
-        DeleteDialog(mensaje, deleteDialogFunction, this.requireContext())
-            .show(childFragmentManager, "ELIMINAR MENSAJE")
 
         return true
     }

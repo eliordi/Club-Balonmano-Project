@@ -40,5 +40,16 @@
     <!-- CHAT -->
     <string name="mensaje">Message</string>
 
+    <!-- Preference Chat -->
+    <string name="chatPreference">Chat Settings</string>
+    <string name="userPreference">Chat name</string>
+    <string name="colorPreference">Dark chat</string>
+
+    <!-- Messages Preferences -->
+
+
+    <!-- Sync Preferences -->
+
+
 
 </resources>

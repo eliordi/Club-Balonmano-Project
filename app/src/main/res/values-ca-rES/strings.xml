@@ -40,4 +40,15 @@
     <!-- CHAT -->
     <string name="mensaje">Missatge</string>
 
+    <!-- Preference Chat -->
+    <string name="chatPreference">Configuració del xat</string>
+    <string name="userPreference">Nom xat</string>
+    <string name="colorPreference">Xat oscur</string>
+
+    <!-- Messages Preferences -->
+
+
+    <!-- Sync Preferences -->
+
+
 </resources>

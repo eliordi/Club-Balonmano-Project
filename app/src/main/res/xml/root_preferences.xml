@@ -1,0 +1,17 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/chatPreference">
+
+        <EditTextPreference
+            app:key="userName"
+            app:title="@string/userPreference"
+            app:useSimpleSummaryProvider="true"/>
+
+        <SwitchPreference
+            app:key="darkMode"
+            app:title="@string/colorPreference"
+            app:useSimpleSummaryProvider="true"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

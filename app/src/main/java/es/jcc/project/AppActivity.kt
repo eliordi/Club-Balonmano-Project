@@ -56,7 +56,8 @@ class AppActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListene
     override fun onOptionsItemSelected(item: MenuItem) = when(item.itemId){
 
         R.id.action_settings -> {
-            //Settings fragment
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
             true
         }
         R.id.action_permissions -> {

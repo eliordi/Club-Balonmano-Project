@@ -1,7 +1,9 @@
 package es.jcc.project.Managers
 
+import com.google.firebase.Timestamp
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.type.DateTime
 import es.jcc.project.Classes.Mensaje
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
@@ -9,15 +11,14 @@ import kotlinx.coroutines.tasks.await
 import java.lang.Exception
 import kotlinx.coroutines.flow.Flow
 
+import java.util.Date
+
 class FirestoreManager() {
 
     private val firestore by lazy { FirebaseFirestore.getInstance() }
-    private val auth = AuthManager()
-    private val email = auth.getCurrentUser()?.email.toString()
-
     suspend fun addMensaje(mensaje: Mensaje): Boolean {
         return try {
-            mensaje.email = email
+            mensaje.date = Timestamp.now()
             firestore.collection(CHAT_COLLECTION).add(mensaje).await()
             true
         }catch (e: Exception){
@@ -41,7 +42,7 @@ class FirestoreManager() {
             chatCollection = FirebaseFirestore.getInstance()
                 .collection(CHAT_COLLECTION)
 
-            val subscription = chatCollection?.addSnapshotListener { snapshot, _ ->
+            val subscription = chatCollection?.orderBy("date")?.addSnapshotListener { snapshot, _ ->
                 if (snapshot != null) {
                     val mensajes = mutableListOf<Mensaje>()
                     snapshot.forEach {
@@ -49,7 +50,8 @@ class FirestoreManager() {
                             Mensaje(
                                 id = it.id,
                                 email = it.get(MENSAJE_EMAIL).toString(),
-                                text = it.get(MENSAJE_TEXT).toString()
+                                text = it.get(MENSAJE_TEXT).toString(),
+                                date = Timestamp.now()
                             )
                         )
                     }
