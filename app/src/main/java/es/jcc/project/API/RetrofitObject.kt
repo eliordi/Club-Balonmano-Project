@@ -11,7 +11,7 @@ class RetrofitObject {
             synchronized(this) {
                 if (instance == null) {
                     instance = Retrofit.Builder()
-                        .baseUrl("https://api.artsy.net/api/") // Cambia la URL base según tu API de arte
+                        .baseUrl("https://random-d.uk/api/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build()
                 }
