@@ -1,5 +1,7 @@
 package es.jcc.project.MainApp
 
+import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -40,9 +42,17 @@ class ChatFragment : Fragment(), MensajesAdapter.OnMensajeCLickedListener{
         // Inflate the layout for this fragment
         binding = FragmentChatBinding.inflate(inflater, container, false)
 
+        var email = ""
+        val prefs = requireContext().getSharedPreferences("es.jcc.project_preferences", Context.MODE_PRIVATE)
+        val user = prefs.getString("userName", null)
+        if (user != null){
+            email = user
+        } else {
+            email = AuthManager().getCurrentUser()?.email.toString()
+        }
+
         binding.sendButton.setOnClickListener {
             var text = binding.etMensaje.text.toString()
-            var email = AuthManager().getCurrentUser()?.email.toString()
             createNewMensaje(email, text)
             binding.etMensaje.setText("")
         }

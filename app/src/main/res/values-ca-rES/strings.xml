@@ -43,12 +43,15 @@
     <!-- Preference Chat -->
     <string name="chatPreference">Configuració del xat</string>
     <string name="userPreference">Nom xat</string>
-    <string name="colorPreference">Xat oscur</string>
+    <string name="chatcolorPreference">Color del mensatge</string>
+    <string name="textColor">Color del text</string>
 
-    <!-- Messages Preferences -->
+    <!-- Preference Cache -->
+    <string name="cachePreference">Memòria "cache"</string>
+    <string name="offlineMode">Mode sense conexió</string>
 
-
-    <!-- Sync Preferences -->
-
+    <!-- Preference Vibrate -->
+    <string name="general">General</string>
+    <string name="vibrate">Vibrar</string>
 
 </resources>

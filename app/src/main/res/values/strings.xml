@@ -43,13 +43,18 @@
     <!-- Preference Chat -->
     <string name="chatPreference">Chat Settings</string>
     <string name="userPreference">Chat name</string>
-    <string name="colorPreference">Dark chat</string>
+    <string name="chatcolorPreference">Message color</string>
+    <string name="textColor">Text color</string>
 
-    <!-- Messages Preferences -->
+    <!-- Preference Cache -->
+    <string name="cachePreference">Caché memory</string>
+    <string name="offlineMode">Offline mode</string>
 
-
-    <!-- Sync Preferences -->
-
+    <!-- Preference General -->
+    <string name="general">General</string>
+    <string name="vibrate">Vibrate</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

@@ -1,34 +1,23 @@
 package es.jcc.project
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
-import android.content.res.Configuration
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.google.android.material.navigation.NavigationBarView
-import com.google.android.material.snackbar.Snackbar
-import es.jcc.project.Login.LoginFragment
 import es.jcc.project.MainApp.PlayersFragment
 import es.jcc.project.MainApp.TeamsFragment
 import es.jcc.project.databinding.ActivityAppBinding
-import java.util.Locale
 import android.Manifest
 import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
+import es.jcc.project.MainApp.RetrofitFragment
 import es.jcc.project.MainApp.ChatFragment
-import es.jcc.project.MainApp.HomeFragment
 
 
 class AppActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener{
@@ -97,7 +86,7 @@ class AppActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListene
         R.id.inicio -> {
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
-                replace<HomeFragment>(R.id.fCView)
+                replace<RetrofitFragment>(R.id.fCView)
                 addToBackStack(null)
             }
             true

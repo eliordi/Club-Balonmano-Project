@@ -7,11 +7,30 @@
             app:title="@string/userPreference"
             app:useSimpleSummaryProvider="true"/>
 
-        <SwitchPreference
-            app:key="darkMode"
-            app:title="@string/colorPreference"
+        <es.jcc.project.ColorPickerPreference.ColorPicker
+            app:key="chatColor"
+            app:title="@string/chatcolorPreference"
             app:useSimpleSummaryProvider="true"/>
 
+        <es.jcc.project.ColorPickerPreference.ColorPicker
+            app:key="textColor"
+            app:title="@string/textColor"
+            app:useSimpleSummaryProvider="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/cachePreference">
+
+        <SwitchPreference
+            app:key="offlineMode"
+            app:title="@string/offlineMode"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/general">
+        <CheckBoxPreference
+            app:key="vibrate"
+            app:title="@string/vibrate"/>
     </PreferenceCategory>
 
 </PreferenceScreen>
