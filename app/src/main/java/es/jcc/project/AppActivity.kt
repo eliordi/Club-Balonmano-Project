@@ -18,6 +18,7 @@ import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 import es.jcc.project.MainApp.RetrofitFragment
 import es.jcc.project.MainApp.ChatFragment
+import es.jcc.project.MainApp.MultimediaFragment
 
 
 class AppActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener{
@@ -116,6 +117,11 @@ class AppActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListene
             true
         }
         R.id.imagenes -> {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                replace<MultimediaFragment>(R.id.fCView)
+                addToBackStack(null)
+            }
             true
         }
         else -> false
